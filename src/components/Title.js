@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
@@ -12,7 +13,23 @@ const MainContainer = styled.div`
   }
 `;
 
+const IntroduceMe = "안녕하세요\n 프론트엔드 개발자 최유정입니다";
+
 const Title = () => {
+  const [myName, setMyName] = useState("");
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setMyName((prev) => prev + IntroduceMe[count]);
+      setCount((prev) => prev + 1);
+    }, 200);
+    if (count === IntroduceMe.length) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [myName, count]);
+
   return (
     <MainContainer>
       {/* <div className="information">
@@ -28,11 +45,7 @@ const Title = () => {
           <h1>최유정</h1>
         </div>
       </div> */}
-      <h1>
-        안녕하세요
-        <br />
-        프론트엔드 개발자 최유정입니다
-      </h1>
+      <h1>{myName}</h1>
     </MainContainer>
   );
 };
