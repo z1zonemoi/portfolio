@@ -38,7 +38,7 @@ const AboutMe = () => {
       <div className="informationContainer">
         <div className="profileImage">오리</div>
         <div className="aboutMeSubTitle">
-          <h3>성장 의지가 강하고, 실천하는 개발자</h3>
+          <h3>항상 실천하며, 성장의지가 강한 개발자</h3>
           <h3>기록하여 회고하는 걸 즐기는 개발자</h3>
           <h3>정보 공유를 좋아하는 개발자</h3>
         </div>

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import useMoveElement from "../useMoveElement";
+import { useEffect, useRef, useState } from "react";
 
 const ProjectContainer = styled.div`
   padding: 3rem;
@@ -10,10 +12,13 @@ const ProjectContainer = styled.div`
     margin-bottom: 2rem;
   }
   > div {
+    border: 1px solid red;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .firstProject {
+    align-self: flex-end;
   }
 `;
 
@@ -25,12 +30,15 @@ const ProjectInformation = styled.div`
 `;
 
 const Project = () => {
+  const { element } = useMoveElement();
   return (
-    <ProjectContainer>
+    <ProjectContainer ref={element}>
       <h2>Project</h2>
       <div>
         <ProjectInformation>코인네버다이</ProjectInformation>
-        <ProjectInformation>대여가대여</ProjectInformation>
+        <ProjectInformation className="firstProject">
+          대여가대여
+        </ProjectInformation>
       </div>
     </ProjectContainer>
   );

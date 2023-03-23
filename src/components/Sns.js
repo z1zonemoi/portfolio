@@ -25,13 +25,24 @@ const SnsContainer = styled.div`
   .information {
     margin-left: 1rem;
   }
+  > div {
+    > a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+    }
+  }
 `;
 
 const Sns = ({ children, information }) => {
   return (
     <SnsContainer>
-      <div className="media">{children}</div>
-      <div className="information">{information}</div>
+      <div className="media">
+        <a href={`https://${information}`}>{children}</a>
+      </div>
+      <div className="information">
+        <a href={`https://${information}`}>{information}</a>
+      </div>
     </SnsContainer>
   );
 };
