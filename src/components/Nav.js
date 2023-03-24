@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const NavContainer = styled.nav`
@@ -11,6 +12,12 @@ const NavContainer = styled.nav`
   background-color: black;
   > h2 {
     color: white;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .focusNav {
+    border-bottom: 2px solid white;
   }
   .portfolioNav {
     margin-right: auto;
@@ -22,23 +29,57 @@ const NavContainer = styled.nav`
 `;
 
 const Nav = ({ moveToElement }) => {
+  const [i, si] = useState(null);
+  const navTap = [
+    {
+      title: "Portfolio",
+      className: "portfolioNav",
+    },
+    {
+      title: "Contact",
+    },
+    {
+      title: "About Me",
+    },
+    {
+      title: "Skills",
+    },
+    {
+      title: "Project",
+    },
+  ];
+
+  const onClickNavName = (index) => {
+    moveToElement(index);
+    si(index);
+  };
+
+  const navClassName = (className, index) => {
+    let applyClassName = "navRight";
+    if (className) {
+      applyClassName = className;
+    }
+    if (!(i === index) || index === 0) {
+      return applyClassName;
+    } else {
+      return (applyClassName += " focusNav");
+    }
+  };
+
   return (
     <NavContainer>
-      <h2 className="portfolioNav" onClick={() => moveToElement(0)}>
-        Portfolio
-      </h2>
-      <h2 className="navRight" onClick={() => moveToElement(1)}>
-        Contact
-      </h2>
-      <h2 className="navRight" onClick={() => moveToElement(2)}>
-        About ME
-      </h2>
-      <h2 className="navRight" onClick={() => moveToElement(3)}>
-        Skills
-      </h2>
-      <h2 className="navRight" onClick={() => moveToElement(4)}>
-        Project
-      </h2>
+      {navTap.map((tapName, index) => {
+        const { title, className } = tapName;
+        return (
+          <h2
+            key={title}
+            className={navClassName(className, index)}
+            onClick={() => onClickNavName(index)}
+          >
+            {title}
+          </h2>
+        );
+      })}
     </NavContainer>
   );
 };
