@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Main from "./pages/Main";
@@ -8,6 +9,12 @@ const Container = styled.div`
 `;
 
 function App() {
+  useEffect(() => {
+    window.onbeforeunload = function pushRefresh() {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+
   return (
     <Container>
       <Routes>

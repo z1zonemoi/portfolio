@@ -4,7 +4,7 @@ import Skill from "./Skill";
 
 const SkillsContainer = styled.div`
   padding: 3rem;
-  height: fit-content;
+  height: 100vh;
   /* border: 1px solid red; */
   > h2 {
     font-size: xx-large;

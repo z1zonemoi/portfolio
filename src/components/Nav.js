@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { isClick, navIndexState } from "../atom";
+import useMoveElement from "../useMoveElement";
 
 const NavContainer = styled.nav`
   display: flex;
@@ -29,7 +31,10 @@ const NavContainer = styled.nav`
 `;
 
 const Nav = ({ moveToElement }) => {
-  const [i, si] = useState(null);
+  const [id, sId] = useRecoilState(navIndexState);
+
+  const { navClassName } = useMoveElement();
+
   const navTap = [
     {
       title: "Portfolio",
@@ -50,20 +55,8 @@ const Nav = ({ moveToElement }) => {
   ];
 
   const onClickNavName = (index) => {
+    sId(index);
     moveToElement(index);
-    si(index);
-  };
-
-  const navClassName = (className, index) => {
-    let applyClassName = "navRight";
-    if (className) {
-      applyClassName = className;
-    }
-    if (!(i === index) || index === 0) {
-      return applyClassName;
-    } else {
-      return (applyClassName += " focusNav");
-    }
   };
 
   return (

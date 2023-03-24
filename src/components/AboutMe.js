@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const AboutMeContainer = styled.div`
   padding: 3rem;
-  height: fit-content;
-  /* border: 1px solid red; */
+  height: 100vh;
+  border: 1px solid red;
   > h2 {
     font-size: xx-large;
     font-weight: 600;

@@ -4,7 +4,7 @@ import Sns from "./Sns";
 
 const ContactContainer = styled.div`
   padding: 3rem;
-  height: fit-content;
+  height: 100vh;
   /* border: 1px solid red; */
   > h2 {
     font-size: xx-large;
