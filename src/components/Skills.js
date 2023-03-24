@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 import Skill from "./Skill";
 
@@ -31,9 +32,9 @@ const ToolsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const Skills = () => {
+const Skills = forwardRef((props, ref) => {
   return (
-    <SkillsContainer>
+    <SkillsContainer ref={(skills) => (ref.current[3] = skills)}>
       <h2>Skills</h2>
       <SkillsIconContainer>
         <h3>FrontEnd</h3>
@@ -61,6 +62,6 @@ const Skills = () => {
       </SkillsIconContainer>
     </SkillsContainer>
   );
-};
+});
 
 export default Skills;

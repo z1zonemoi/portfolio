@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 import Sns from "./Sns";
 
@@ -18,9 +19,9 @@ const ContactContainer = styled.div`
   }
 `;
 
-const Contact = () => {
+const Contact = forwardRef((props, ref) => {
   return (
-    <ContactContainer>
+    <ContactContainer ref={(contact) => (ref.current[1] = contact)}>
       <h2>Contact</h2>
       <div className="snsContainer">
         <Sns information={"zizonemoi@gmail.com"}>Email</Sns>
@@ -29,6 +30,6 @@ const Contact = () => {
       </div>
     </ContactContainer>
   );
-};
+});
 
 export default Contact;

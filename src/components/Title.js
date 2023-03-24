@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
@@ -19,7 +19,7 @@ const MainContainer = styled.div`
 const Introduce = "안녕하세요";
 const IntroduceMe = "프론트엔드 개발자 최유정입니다";
 
-const Title = () => {
+const Title = forwardRef((props, ref) => {
   const [myName, setMyName] = useState("");
   const [count, setCount] = useState(0);
   const [introduceName, setIntroduceName] = useState("");
@@ -47,7 +47,7 @@ const Title = () => {
   });
 
   return (
-    <MainContainer>
+    <MainContainer ref={(title) => (ref.current[0] = title)}>
       {/* <div className="information">
         <div className="navLinkContainer">
           <h2 className="portfolioNav">Portfolio</h2>
@@ -64,9 +64,8 @@ const Title = () => {
       <h1 className="hi">{myName}</h1>
       <br />
       <h1>{introduceName}</h1>
-      <div>scroll</div>
     </MainContainer>
   );
-};
+});
 
 export default Title;

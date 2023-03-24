@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
 
 const AboutMeContainer = styled.div`
@@ -31,9 +32,9 @@ const AboutMeContainer = styled.div`
   }
 `;
 
-const AboutMe = () => {
+const AboutMe = forwardRef((props, ref) => {
   return (
-    <AboutMeContainer>
+    <AboutMeContainer ref={(about) => (ref.current[2] = about)}>
       <h2>About Me</h2>
       <div className="informationContainer">
         <div className="profileImage">오리</div>
@@ -45,6 +46,6 @@ const AboutMe = () => {
       </div>
     </AboutMeContainer>
   );
-};
+});
 
 export default AboutMe;

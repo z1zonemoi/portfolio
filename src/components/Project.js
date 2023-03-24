@@ -1,6 +1,5 @@
+import { forwardRef } from "react";
 import styled from "styled-components";
-import useMoveElement from "../useMoveElement";
-import { useEffect, useRef, useState } from "react";
 
 const ProjectContainer = styled.div`
   padding: 3rem;
@@ -29,19 +28,20 @@ const ProjectInformation = styled.div`
   background-color: gray;
 `;
 
-const Project = () => {
-  const { element } = useMoveElement();
+const Project = forwardRef((props, ref) => {
   return (
-    <ProjectContainer ref={element}>
-      <h2>Project</h2>
-      <div>
-        <ProjectInformation>코인네버다이</ProjectInformation>
-        <ProjectInformation className="firstProject">
-          대여가대여
-        </ProjectInformation>
-      </div>
-    </ProjectContainer>
+    <>
+      <ProjectContainer ref={(project) => (ref.current[4] = project)}>
+        <h2>Project</h2>
+        <div>
+          <ProjectInformation>코인네버다이</ProjectInformation>
+          <ProjectInformation className="firstProject">
+            대여가대여
+          </ProjectInformation>
+        </div>
+      </ProjectContainer>
+    </>
   );
-};
+});
 
 export default Project;

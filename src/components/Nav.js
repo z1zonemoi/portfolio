@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import useMoveElement from "../useMoveElement";
 
 const NavContainer = styled.nav`
   display: flex;
@@ -22,16 +21,22 @@ const NavContainer = styled.nav`
   }
 `;
 
-const Nav = () => {
-  const { moveToElement } = useMoveElement();
-
+const Nav = ({ moveToElement }) => {
   return (
     <NavContainer>
-      <h2 className="portfolioNav">Portfolio</h2>
-      <h2 className="navRight">Contact</h2>
-      <h2 className="navRight">About ME</h2>
-      <h2 className="navRight">Skills</h2>
-      <h2 onClick={moveToElement} className="navRight">
+      <h2 className="portfolioNav" onClick={() => moveToElement(0)}>
+        Portfolio
+      </h2>
+      <h2 className="navRight" onClick={() => moveToElement(1)}>
+        Contact
+      </h2>
+      <h2 className="navRight" onClick={() => moveToElement(2)}>
+        About ME
+      </h2>
+      <h2 className="navRight" onClick={() => moveToElement(3)}>
+        Skills
+      </h2>
+      <h2 className="navRight" onClick={() => moveToElement(4)}>
         Project
       </h2>
     </NavContainer>
