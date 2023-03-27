@@ -1,6 +1,4 @@
-import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { isClick, navIndexState } from "../atom";
 import useMoveElement from "../useMoveElement";
 
 const NavContainer = styled.nav`
@@ -31,8 +29,6 @@ const NavContainer = styled.nav`
 `;
 
 const Nav = ({ moveToElement }) => {
-  const [id, sId] = useRecoilState(navIndexState);
-
   const { navClassName } = useMoveElement();
 
   const navTap = [
@@ -55,7 +51,6 @@ const Nav = ({ moveToElement }) => {
   ];
 
   const onClickNavName = (index) => {
-    // sId(index);
     moveToElement(index);
   };
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { isClick, navIndexState } from "../atom";
+import { navIndexState } from "../atom";
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Nav from "../components/Nav";
