@@ -20,7 +20,7 @@ const useMoveElement = () => {
   const element = useRef([]);
   const moveToElement = (index) => {
     element.current[index]?.scrollIntoView({
-      // behavior: "smooth",
+      behavior: "smooth",
       block: "start",
     });
   };

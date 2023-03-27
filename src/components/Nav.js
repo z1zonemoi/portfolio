@@ -55,7 +55,7 @@ const Nav = ({ moveToElement }) => {
   ];
 
   const onClickNavName = (index) => {
-    sId(index);
+    // sId(index);
     moveToElement(index);
   };
 
