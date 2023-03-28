@@ -10,6 +10,7 @@ const NavContainer = styled.nav`
   width: 100vw;
   align-items: center;
   background-color: black;
+  z-index: 99;
   > h2 {
     color: white;
     :hover {

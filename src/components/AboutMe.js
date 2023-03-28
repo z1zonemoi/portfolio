@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
+import Example from "./Scene";
 
 const AboutMeContainer = styled.div`
   padding: 3rem;
@@ -37,7 +38,7 @@ const AboutMe = forwardRef((props, ref) => {
     <AboutMeContainer ref={(about) => (ref.current[2] = about)}>
       <h2>About Me</h2>
       <div className="informationContainer">
-        <div className="profileImage">오리</div>
+        <Example />
         <div className="aboutMeSubTitle">
           <h3>항상 실천하며, 성장의지가 강한 개발자</h3>
           <h3>기록하여 회고하는 걸 즐기는 개발자</h3>
