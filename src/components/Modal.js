@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import useBodyOverflowScroll from "../useBodyOverflowScroll";
+import CoinsNeverDie from "./CoinsNeverDie";
+import Daeyeo4U from "./Daeyeo4U";
 
 const ModalContainer = styled.div`
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -18,20 +21,35 @@ const ModalContainer = styled.div`
     border-radius: 0.1rem;
     background-color: #fff;
     animation: modal-show 0.3s;
-    overflow: hidden;
+    overflow: scroll;
   }
 `;
 
 const Modal = ({ coinsModal, setCoinsModal, content }) => {
+  const { lockBodyScroll, unLockBodyScroll } = useBodyOverflowScroll();
   if (!coinsModal) return;
+
   const onClickModal = () => {
     setCoinsModal(!coinsModal);
+    unLockBodyScroll();
   };
 
+  const getProject = (content) => {
+    if (content === "portfolio") {
+      return;
+    }
+    if (content === "coins") {
+      return <CoinsNeverDie />;
+    }
+    if (content === "share") {
+      return <Daeyeo4U />;
+    }
+  };
   if (coinsModal) {
     return (
-      <ModalContainer onClick={onClickModal}>
-        <div>{content}</div>
+      <ModalContainer>
+        <div onClick={onClickModal}>x</div>
+        <div>{getProject(content)}</div>
       </ModalContainer>
     );
   }

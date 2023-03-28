@@ -1,5 +1,6 @@
 import { forwardRef, useState } from "react";
 import styled from "styled-components";
+import useBodyOverflowScroll from "../useBodyOverflowScroll";
 import Modal from "./Modal";
 
 const ProjectContainer = styled.div`
@@ -33,17 +34,21 @@ const Project = forwardRef((props, ref) => {
   const [portfolioModal, setPortfolioModal] = useState(false);
   const [coinsModal, setCoinsModal] = useState(false);
   const [shareModal, setShareModal] = useState(false);
+  const { lockBodyScroll, unLockBodyScroll } = useBodyOverflowScroll();
 
   const showModal1 = () => {
     setPortfolioModal(!portfolioModal);
+    lockBodyScroll();
   };
 
   const showModal2 = () => {
     setCoinsModal(!coinsModal);
+    lockBodyScroll();
   };
 
   const showModal3 = () => {
     setShareModal(!shareModal);
+    lockBodyScroll();
   };
 
   return (
