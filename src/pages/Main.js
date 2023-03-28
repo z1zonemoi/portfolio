@@ -28,7 +28,7 @@ const Main = () => {
       el.forEach((el) => {
         if (el.intersectionRatio > 0.1) {
           const b = element.current.indexOf(el.target);
-          sId(b);
+          sId(() => b);
         } else {
         }
       });
