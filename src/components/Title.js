@@ -2,17 +2,16 @@ import { forwardRef, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  background-color: black;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  /* background-image: url(${process.env.PUBLIC_URL}feathers.jpg); */
   > h1 {
-    font-size: 5rem;
-    color: white;
+    font-size: 2rem;
+    color: black;
   }
 `;
 

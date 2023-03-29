@@ -29,7 +29,6 @@ const Main = () => {
         if (el.intersectionRatio > 0.1) {
           const b = element.current.indexOf(el.target);
           sId(() => b);
-        } else {
         }
       });
     };

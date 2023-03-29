@@ -5,10 +5,15 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import styled from "styled-components";
 
-export function Model(props) {
+export function Model() {
   const { nodes, materials } = useGLTF("/scene.gltf");
   return (
-    <group {...props} dispose={null}>
+    <group
+      position={[1.7, -1, 0.7]}
+      scale={[1.5, 1.5, 1.5]}
+      dispose={null}
+      rotation={[0, 0, 0]}
+    >
       <group position={[-1.32, 0.74, -0.16]} scale={[0.67, 0.77, 0.77]}>
         <mesh
           geometry={nodes.Object_4.geometry}
@@ -79,7 +84,7 @@ const Example = () => {
               intensity={0.7}
               angle={0.2}
               penumbra={2}
-              position={[10, 15, 10]}
+              position={[2, 2, 10]}
               castShadow
             />
             <Model />
@@ -101,5 +106,6 @@ const Contain = styled.div`
   width: 20%;
   height: 20%;
   /* margin: 0 auto; */
+  /* padding: 1rem; */
   background: #bfc7dd;
 `;

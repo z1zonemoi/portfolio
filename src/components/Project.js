@@ -6,14 +6,12 @@ import Modal from "./Modal";
 const ProjectContainer = styled.div`
   padding: 3rem;
   height: fit-content;
-  /* border: 1px solid red; */
   > h2 {
     font-size: xx-large;
     font-weight: 600;
     margin-bottom: 2rem;
   }
   > div {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -24,8 +22,8 @@ const ProjectContainer = styled.div`
 `;
 
 const ProjectInformation = styled.div`
-  width: 600px;
-  height: 800px;
+  width: 30rem;
+  height: 20rem;
   margin: 5px;
   background-color: gray;
 `;

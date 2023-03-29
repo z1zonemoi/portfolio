@@ -11,9 +11,6 @@ const ContactContainer = styled.div`
     font-weight: 600;
   }
   .snsContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     margin-top: 2rem;
     margin-left: 1rem;
   }

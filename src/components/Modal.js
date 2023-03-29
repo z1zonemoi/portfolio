@@ -6,20 +6,20 @@ import Daeyeo4U from "./Daeyeo4U";
 
 const ModalContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999;
-  display: flex;
-  justify-content: center;
+  z-index: 990;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   > div {
-    width: 90%;
+    /* border: 1px solid red; */
+    z-index: 999;
+    width: 80%;
     height: 90%;
-    margin: 0 auto;
-    border-radius: 0.1rem;
-    background-color: #fff;
+    margin: auto;
+    border-radius: 0.2rem;
+    background: linear-gradient(#a29bfe 1%, #ffeaa7);
     animation: modal-show 0.3s;
     overflow: scroll;
   }
@@ -32,6 +32,10 @@ const Modal = ({ coinsModal, setCoinsModal, content }) => {
   const onClickModal = () => {
     setCoinsModal(!coinsModal);
     unLockBodyScroll();
+  };
+
+  const stopEventPropagation = (event) => {
+    event.stopPropagation();
   };
 
   const getProject = (content) => {
@@ -47,9 +51,11 @@ const Modal = ({ coinsModal, setCoinsModal, content }) => {
   };
   if (coinsModal) {
     return (
-      <ModalContainer>
-        <div onClick={onClickModal}>x</div>
-        <div>{getProject(content)}</div>
+      <ModalContainer onClick={onClickModal}>
+        <div onClick={stopEventPropagation}>
+          <button onClick={onClickModal}>x</button>
+          {getProject(content)}
+        </div>
       </ModalContainer>
     );
   }

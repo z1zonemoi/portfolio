@@ -15,8 +15,8 @@ const SkillsContainer = styled.div`
 const SkillsIconContainer = styled.div`
   margin-left: 1rem;
   > h3 {
-    font-size: larger;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-top: 2rem;
   }
 `;
@@ -57,7 +57,7 @@ const Skills = forwardRef((props, ref) => {
           <Skill>GitHub</Skill>
           <Skill>Notion</Skill>
           <Skill>Discord</Skill>
-          <Skill>Zep</Skill>
+          <Skill>Slack</Skill>
         </ToolsContainer>
       </SkillsIconContainer>
     </SkillsContainer>
