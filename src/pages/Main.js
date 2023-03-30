@@ -11,6 +11,11 @@ import Title from "../components/Title";
 import useMoveElement from "../useMoveElement";
 
 const MainContainer = styled.div`
+  > div {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
   > footer {
     padding: 1rem;
   }
@@ -51,11 +56,13 @@ const Main = () => {
     <MainContainer>
       <Nav moveToElement={moveToElement} />
       <Title ref={element} />
-      <Contact ref={element} />
-      <AboutMe ref={element} />
-      <Skills ref={element} />
-      <Project ref={element} />
-      <footer>2023 Yujung Choi</footer>
+      <div>
+        <Contact ref={element} />
+        <AboutMe ref={element} />
+        <Skills ref={element} />
+        <Project ref={element} />
+        <footer>2023 Yujung Choi</footer>
+      </div>
     </MainContainer>
   );
 };
