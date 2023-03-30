@@ -21,6 +21,7 @@ const NavContainer = styled.nav`
   .focusNav {
     /* background-color: #ecf2ff; */
     color: #bface2;
+    transition: 0.2s;
     /* border-bottom: 2px solid #bface2; */
   }
   .portfolioNav {

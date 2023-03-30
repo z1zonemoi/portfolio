@@ -19,18 +19,27 @@ const SkillContainer = styled.div`
   width: 5rem;
   height: 5rem;
   padding: 1rem;
-  /* background-color: gray; */
+  border: 1px solid #ecf2ff;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 0.2rem;
   > h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
     text-align: center;
   }
   > div {
     font-size: 2.7rem;
+    color: #bface2;
+  }
+  :hover {
+    /* cursor: pointer; */
+    > div {
+      color: #655dbb;
+      transition: 0.7s;
+    }
   }
 `;
 

@@ -103,9 +103,10 @@ const Example = () => {
 export default Example;
 
 const Contain = styled.div`
-  width: 20%;
-  height: 20%;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 0.2rem;
   /* margin: 0 auto; */
   /* padding: 1rem; */
-  background: #bfc7dd;
+  background: #ecf2ff;
 `;

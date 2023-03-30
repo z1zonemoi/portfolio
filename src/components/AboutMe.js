@@ -5,6 +5,7 @@ import Example from "./Scene";
 const AboutMeContainer = styled.div`
   padding: 3rem;
   height: 100vh;
+  /* height: fit-content; */
   /* border: 1px solid red; */
   > h2 {
     font-size: xx-large;

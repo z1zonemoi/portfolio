@@ -4,7 +4,8 @@ import Skill from "./Skill";
 
 const SkillsContainer = styled.div`
   padding: 3rem;
-  height: 100vh;
+  /* height: 100vh; */
+  height: fit-content;
   /* border: 1px solid red; */
   > h2 {
     font-size: xx-large;
@@ -39,14 +40,14 @@ const Skills = forwardRef((props, ref) => {
       <SkillsIconContainer>
         <h3>FrontEnd</h3>
         <FrontEndContainer>
-          <Skill>React</Skill>
           <Skill>JS</Skill>
+          <Skill>TypeScript</Skill>
+          <Skill>React</Skill>
+          <Skill>Next.js</Skill>
+          <Skill>Recoil</Skill>
           <Skill>HTML</Skill>
           <Skill>CSS</Skill>
-          <Skill>TypeScript</Skill>
-          <Skill>Next.js</Skill>
           <Skill>Styled-components</Skill>
-          <Skill>Recoil</Skill>
           <Skill>TailWindCSS</Skill>
           <Skill>Vercel</Skill>
           <Skill>Firebase</Skill>

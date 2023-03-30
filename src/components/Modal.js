@@ -3,6 +3,7 @@ import styled from "styled-components";
 import useBodyOverflowScroll from "../useBodyOverflowScroll";
 import CoinsNeverDie from "./CoinsNeverDie";
 import Daeyeo4U from "./Daeyeo4U";
+import Portfolio from "./Portfolio";
 
 const ModalContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
@@ -13,15 +14,29 @@ const ModalContainer = styled.div`
   bottom: 0;
   left: 0;
   > div {
+    padding: 1rem;
     /* border: 1px solid red; */
     z-index: 999;
     width: 80%;
     height: 90%;
     margin: auto;
     border-radius: 0.2rem;
-    background: linear-gradient(#a29bfe 1%, #ffeaa7);
+    background-color: white;
     animation: modal-show 0.3s;
     overflow: scroll;
+    > button {
+      text-align: center;
+      font-size: 1.2rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 70%;
+      background-color: #bface2;
+      color: white;
+      border: 0;
+      :hover {
+        cursor: pointer;
+      }
+    }
   }
 `;
 
@@ -40,7 +55,7 @@ const Modal = ({ coinsModal, setCoinsModal, content }) => {
 
   const getProject = (content) => {
     if (content === "portfolio") {
-      return;
+      return <Portfolio />;
     }
     if (content === "coins") {
       return <CoinsNeverDie />;
@@ -53,7 +68,7 @@ const Modal = ({ coinsModal, setCoinsModal, content }) => {
     return (
       <ModalContainer onClick={onClickModal}>
         <div onClick={stopEventPropagation}>
-          <button onClick={onClickModal}>x</button>
+          <button onClick={onClickModal}>X</button>
           {getProject(content)}
         </div>
       </ModalContainer>

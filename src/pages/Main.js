@@ -10,7 +10,11 @@ import Skills from "../components/Skills";
 import Title from "../components/Title";
 import useMoveElement from "../useMoveElement";
 
-const MainContainer = styled.div``;
+const MainContainer = styled.div`
+  > footer {
+    padding: 1rem;
+  }
+`;
 
 const Main = () => {
   const [id, sId] = useRecoilState(navIndexState);
@@ -20,13 +24,13 @@ const Main = () => {
   const option = {
     root: null,
     rootMargin: "0px 0px 0px 0px",
-    threshold: 0.1,
+    threshold: 0.5,
   };
 
   useEffect(() => {
     const callback = (el, observer) => {
       el.forEach((el) => {
-        if (el.intersectionRatio > 0.1) {
+        if (el.intersectionRatio > 0.5) {
           const b = element.current.indexOf(el.target);
           sId(() => b);
         }
@@ -51,6 +55,7 @@ const Main = () => {
       <AboutMe ref={element} />
       <Skills ref={element} />
       <Project ref={element} />
+      <footer>2023 Yujung Choi</footer>
     </MainContainer>
   );
 };

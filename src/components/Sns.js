@@ -27,6 +27,13 @@ const SnsContainer = styled.div`
       cursor: pointer;
     }
   }
+  :hover {
+    > div > a {
+      cursor: pointer;
+      color: #bface2;
+      transition: 0.7s;
+    }
+  }
 `;
 
 const Sns = ({ children, information }) => {
