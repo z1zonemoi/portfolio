@@ -22,12 +22,23 @@ const AboutMeContainer = styled.div`
   }
   .aboutMeSubTitle {
     height: 8rem;
-    font-size: larger;
+    font-size: 1.2rem;
     margin-left: 2rem;
     margin-top: 0.2rem;
     font-weight: 500;
     > h3 {
+      animation: sub 7s infinite;
       margin-bottom: 2rem;
+    }
+  }
+  @keyframes sub {
+    0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0);
     }
   }
 `;

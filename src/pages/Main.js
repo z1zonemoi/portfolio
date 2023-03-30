@@ -11,7 +11,7 @@ import Title from "../components/Title";
 import useMoveElement from "../useMoveElement";
 
 const MainContainer = styled.div`
-  > div {
+  #max-width {
     max-width: 80rem;
     margin: 0 auto;
   }
@@ -56,7 +56,7 @@ const Main = () => {
     <MainContainer>
       <Nav moveToElement={moveToElement} />
       <Title ref={element} />
-      <div>
+      <div id="max-width">
         <Contact ref={element} />
         <AboutMe ref={element} />
         <Skills ref={element} />

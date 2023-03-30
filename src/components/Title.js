@@ -1,9 +1,32 @@
 import { forwardRef, useEffect, useState } from "react";
 import styled from "styled-components";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 
 const MainContainer = styled.div`
+  animation: main 17s infinite;
+  background-position: center 170%;
+  @keyframes main {
+    0% {
+      background-color: rgb(236, 242, 255, 0.7);
+    }
+    25% {
+      background-color: rgb(191, 172, 226, 0.3);
+    }
+    50% {
+      background-color: rgb(101, 93, 187, 0.1);
+    }
+    75% {
+      background-color: rgb(191, 172, 226, 0.3);
+    }
+    100% {
+      background-color: rgb(236, 242, 255, 0.7);
+    }
+  }
+  background-size: 100% 70%;
   width: 100vw;
   height: 100vh;
+  background-image: url("tree.png");
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +35,29 @@ const MainContainer = styled.div`
   > h1 {
     font-size: 2rem;
     color: black;
+  }
+  > div {
+    animation: scroll 5s infinite;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  @keyframes scroll {
+    0% {
+      color: rgba(255, 255, 255, 0.1);
+
+      bottom: 30px;
+    }
+    50% {
+      bottom: 20px;
+    }
+    100% {
+      bottom: 30px;
+    }
   }
 `;
 
@@ -50,6 +96,10 @@ const Title = forwardRef((props, ref) => {
       <h1 className="hi">{myName}</h1>
       <br />
       <h1>{introduceName}</h1>
+      <div>
+        scroll
+        <MdKeyboardDoubleArrowDown />
+      </div>
     </MainContainer>
   );
 });
