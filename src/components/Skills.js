@@ -4,9 +4,7 @@ import Skill from "./Skill";
 
 const SkillsContainer = styled.div`
   padding: 5rem;
-  /* height: 100vh; */
   height: fit-content;
-  /* border: 1px solid red; */
   > h2 {
     font-size: xx-large;
     font-weight: 600;
@@ -35,31 +33,35 @@ const ToolsContainer = styled.div`
 `;
 
 const Skills = forwardRef((props, ref) => {
+  const frontSkills = [
+    "JS",
+    "TypeScript",
+    "React",
+    "Recoil",
+    "HTML",
+    "CSS",
+    "Styled-components",
+    "TailWindCSS",
+    "Vercel",
+    "Firebase",
+  ];
+
+  const tools = ["Git", "GitHub", "Notion", "Discord", "Slack"];
   return (
     <SkillsContainer ref={(skills) => (ref.current[3] = skills)}>
       <h2>Skills</h2>
       <SkillsIconContainer>
         <h3>FrontEnd</h3>
         <FrontEndContainer>
-          <Skill>JS</Skill>
-          <Skill>TypeScript</Skill>
-          <Skill>React</Skill>
-          <Skill>Next.js</Skill>
-          <Skill>Recoil</Skill>
-          <Skill>HTML</Skill>
-          <Skill>CSS</Skill>
-          <Skill>Styled-components</Skill>
-          <Skill>TailWindCSS</Skill>
-          <Skill>Vercel</Skill>
-          <Skill>Firebase</Skill>
+          {frontSkills.map((frontSkill) => (
+            <Skill key={frontSkill}>{frontSkill}</Skill>
+          ))}
         </FrontEndContainer>
         <h3>Tools</h3>
         <ToolsContainer>
-          <Skill>Git</Skill>
-          <Skill>GitHub</Skill>
-          <Skill>Notion</Skill>
-          <Skill>Discord</Skill>
-          <Skill>Slack</Skill>
+          {tools.map((tool) => (
+            <Skill key={tool}>{tool}</Skill>
+          ))}
         </ToolsContainer>
       </SkillsIconContainer>
     </SkillsContainer>
