@@ -4,7 +4,9 @@ import Example from "./Scene";
 
 const AboutMeContainer = styled.div`
   padding: 5rem;
-  height: 100vh;
+  /* height: 100vh; */
+  height: fit-content;
+
   > h2 {
     font-size: xx-large;
     font-weight: 600;
