@@ -9,10 +9,10 @@ export function Model() {
   const { nodes, materials } = useGLTF("/scene.gltf");
   return (
     <group
-      position={[1.7, -1, 0.7]}
-      scale={[1.5, 1.5, 1.5]}
+      position={[1.2, -0.3, 0.7]}
+      scale={[1.2, 1.2, 1.2]}
       dispose={null}
-      rotation={[0, 0, 0]}
+      rotation={[0.1, 0.35, 0]}
     >
       <group position={[-1.32, 0.74, -0.16]} scale={[0.67, 0.77, 0.77]}>
         <mesh
@@ -84,7 +84,7 @@ const Example = () => {
               intensity={0.7}
               angle={0.2}
               penumbra={2}
-              position={[2, 2, 10]}
+              position={[5, 2, 10]}
               castShadow
             />
             <Model />
@@ -105,8 +105,12 @@ export default Example;
 const Contain = styled.div`
   width: 20rem;
   height: 20rem;
-  border-radius: 0.2rem;
+  /* border-radius: 0.2rem; */
   /* margin: 0 auto; */
   /* padding: 1rem; */
-  background: #ecf2ff;
+  background: #fbfafc;
+  /* border: 1px solid red; */
+  :hover {
+    cursor: pointer;
+  }
 `;

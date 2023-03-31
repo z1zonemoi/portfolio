@@ -16,6 +16,7 @@ import { IoLogoVercel } from "react-icons/io5";
 import { BsGit, BsGithub, BsDiscord, BsSlack } from "react-icons/bs";
 
 const SkillContainer = styled.div`
+  background-color: white;
   width: 5rem;
   height: 5rem;
   padding: 1rem;

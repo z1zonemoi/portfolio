@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Skill from "./Skill";
 
 const SkillsContainer = styled.div`
-  padding: 3rem;
+  padding: 5rem;
   /* height: 100vh; */
   height: fit-content;
   /* border: 1px solid red; */
@@ -15,6 +15,7 @@ const SkillsContainer = styled.div`
 
 const SkillsIconContainer = styled.div`
   margin-left: 1rem;
+  margin-top: 3rem;
   > h3 {
     font-size: 1.3rem;
     font-weight: 700;

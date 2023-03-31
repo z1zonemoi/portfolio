@@ -5,27 +5,11 @@ import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 const MainContainer = styled.div`
   animation: main 17s infinite;
   background-position: center 170%;
-  @keyframes main {
-    0% {
-      background-color: rgb(236, 242, 255, 0.7);
-    }
-    25% {
-      background-color: rgb(191, 172, 226, 0.3);
-    }
-    50% {
-      background-color: rgb(101, 93, 187, 0.1);
-    }
-    75% {
-      background-color: rgb(191, 172, 226, 0.3);
-    }
-    100% {
-      background-color: rgb(236, 242, 255, 0.7);
-    }
-  }
+
   background-size: 100% 70%;
   width: 100vw;
   height: 100vh;
-  background-image: url("tree.png");
+  /* background-image: url("tree.png"); */
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -48,7 +32,7 @@ const MainContainer = styled.div`
 
   @keyframes scroll {
     0% {
-      color: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.5);
 
       bottom: 30px;
     }

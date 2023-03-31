@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Example from "./Scene";
 
 const AboutMeContainer = styled.div`
-  padding: 3rem;
+  padding: 5rem;
   height: 100vh;
   > h2 {
     font-size: xx-large;
@@ -23,15 +23,15 @@ const AboutMeContainer = styled.div`
   .aboutMeSubTitle {
     height: 8rem;
     font-size: 1.2rem;
-    margin-left: 2rem;
-    margin-top: 0.2rem;
+    margin-left: 2.5rem;
+    margin-top: 2.7rem;
     font-weight: 500;
     > h3 {
       animation: sub 7s infinite;
       margin-bottom: 2rem;
     }
   }
-  @keyframes sub {
+  /* @keyframes sub {
     0% {
       opacity: 0;
       transform: translate3d(100%, 0, 0);
@@ -40,7 +40,7 @@ const AboutMeContainer = styled.div`
       opacity: 1;
       transform: translateZ(0);
     }
-  }
+  } */
 `;
 
 const AboutMe = forwardRef((props, ref) => {
@@ -50,8 +50,8 @@ const AboutMe = forwardRef((props, ref) => {
       <div className="informationContainer">
         <Example />
         <div className="aboutMeSubTitle">
-          <h3>항상 실천하며, 성장의지가 강한 개발자</h3>
           <h3>기록하여 회고하는 걸 즐기는 개발자</h3>
+          <h3>항상 실천하며, 성장의지가 강한 개발자</h3>
           <h3>정보 공유를 좋아하는 개발자</h3>
         </div>
       </div>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Sns from "./Sns";
 
 const ContactContainer = styled.div`
-  padding: 3rem;
+  padding: 5rem;
   /* margin-bottom: 12rem; */
   height: 100vh;
   /* height: fit-content; */
@@ -13,7 +13,7 @@ const ContactContainer = styled.div`
     font-weight: 600;
   }
   .snsContainer {
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-left: 1rem;
   }
 `;

@@ -11,11 +11,11 @@ import Title from "../components/Title";
 import useMoveElement from "../useMoveElement";
 
 const MainContainer = styled.div`
+  background-color: #fbfafc;
   #max-width {
-    max-width: 80rem;
+    max-width: 70rem;
     margin: 0 auto;
   }
-
   > footer {
     padding: 1rem;
   }

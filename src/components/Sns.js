@@ -16,6 +16,12 @@ const SnsContainer = styled.div`
       cursor: pointer;
     }
     font-size: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
   }
   .information {
     margin-left: 1rem;
@@ -25,6 +31,7 @@ const SnsContainer = styled.div`
       text-decoration: none;
       color: black;
       cursor: pointer;
+      margin-top: 0.5rem;
     }
   }
   :hover {
@@ -34,13 +41,19 @@ const SnsContainer = styled.div`
       transition: 0.7s;
     }
   }
+  #tistory {
+    font-size: 1.7rem;
+  }
+  #gmail {
+    font-size: 2.2rem;
+  }
 `;
 
 const Sns = ({ children, information }) => {
   const icons = (children) => {
-    if (children === "Email") return <MdEmail />;
+    if (children === "Email") return <MdEmail id="gmail" />;
     if (children === "GitHub") return <BsGithub />;
-    if (children === "Blog") return <SiTistory />;
+    if (children === "Blog") return <SiTistory id="tistory" />;
   };
 
   return (

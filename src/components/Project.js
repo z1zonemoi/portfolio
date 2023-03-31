@@ -4,7 +4,7 @@ import useBodyOverflowScroll from "../useBodyOverflowScroll";
 import Modal from "./Modal";
 
 const ProjectContainer = styled.div`
-  padding: 3rem;
+  padding: 5rem;
   height: fit-content;
   > h2 {
     font-size: xx-large;
@@ -15,6 +15,7 @@ const ProjectContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: baseline;
+    margin-top: 3rem;
   }
   .firstProject {
     align-self: flex-end;
@@ -26,6 +27,8 @@ const ProjectInformation = styled.div`
   height: 20rem;
   margin: 5px;
   /* background-color: #ecf2ff; */
+  background-color: #ffffff;
+
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   /* border: 1px solid #ecf2ff; */
   padding: 1rem;
