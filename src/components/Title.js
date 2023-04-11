@@ -75,12 +75,12 @@ const MainContainer = styled.div`
     flex-direction: column;
     align-items: center;
     bottom: 20px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
   }
 
   @keyframes scroll {
     0% {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(0, 0, 0, 0.2);
 
       bottom: 30px;
     }

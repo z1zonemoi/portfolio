@@ -18,7 +18,8 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.8",
     "three": "^0.150.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.78.0"
   },
   "scripts": {
     "start": "react-scripts start",
