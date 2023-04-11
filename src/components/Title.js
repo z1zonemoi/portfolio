@@ -9,13 +9,11 @@ const MainContainer = styled.div`
   background-size: 100% 70%;
   width: 100vw;
   height: 100vh;
-  /* background-image: url("tree.png"); */
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-image: url(${process.env.PUBLIC_URL}feathers.jpg); */
   > h1 {
     font-size: 2rem;
     color: black;

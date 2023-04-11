@@ -15,7 +15,6 @@ const ModalContainer = styled.div`
   left: 0;
   > div {
     padding: 1rem;
-    /* border: 1px solid red; */
     z-index: 999;
     width: 80%;
     height: 90%;
@@ -40,12 +39,12 @@ const ModalContainer = styled.div`
   }
 `;
 
-const Modal = ({ coinsModal, setCoinsModal, content }) => {
-  const { lockBodyScroll, unLockBodyScroll } = useBodyOverflowScroll();
-  if (!coinsModal) return;
+const Modal = ({ modal, setModal, content }) => {
+  const { unLockBodyScroll } = useBodyOverflowScroll();
+  if (!modal) return;
 
   const onClickModal = () => {
-    setCoinsModal(!coinsModal);
+    setModal(!modal);
     unLockBodyScroll();
   };
 
@@ -64,7 +63,7 @@ const Modal = ({ coinsModal, setCoinsModal, content }) => {
       return <Daeyeo4U />;
     }
   };
-  if (coinsModal) {
+  if (modal) {
     return (
       <ModalContainer onClick={onClickModal}>
         <div onClick={stopEventPropagation}>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Carousel from "./Carousel";
 
 const CoinsNeverDieContainer = styled.div`
   display: flex;
@@ -69,16 +70,8 @@ const CoinsNeverDieContainer = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
-  width: 27rem;
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-`;
-
-const ImgStyle = styled.img`
-  width: 27rem;
-  border-radius: 0.2rem;
+const InformationContainer = styled.div`
+  margin-bottom: 1rem;
 `;
 
 const LinkContainer = styled.div`
@@ -108,40 +101,33 @@ const Line = styled.div`
   margin: 1rem;
 `;
 
-const 기간과인원수 = styled.div`
+const DurationAndPeople = styled.div`
   align-self: start;
   margin: 1rem 2rem 0.2rem 2rem;
 `;
 
 const CoinsNeverDie = () => {
+  const coinImages = [
+    { alt: "코인네버다이 메인페이지", src: "cnd/cnd-메인-페이지네이션.gif" },
+    { alt: "코인네버다이 보유자산", src: "cnd/cnd-보유자산.gif" },
+    { alt: "코인네버다이 소셜", src: "cnd/cnd-로그인-소셜.gif" },
+    {
+      alt: "코인네버다이 회원가입, 이메일",
+      src: "cnd/cnd-회원가입-이메일-사이즈.gif",
+    },
+    {
+      alt: "코인네버다이 회원가입, 이메일 반응형",
+      src: "cnd/cnd-로그인:회원가입-반응형.gif",
+    },
+  ];
+
   return (
     <CoinsNeverDieContainer>
-      <div>
+      <InformationContainer>
         <h2>Coins Never Die</h2>
         <h3>코인 모의 투자 프로젝트</h3>
-        <ImageContainer>
-          <ImgStyle
-            alt="코인네버다이 메인페이지"
-            src={process.env.PUBLIC_URL + "cnd/cnd-메인-페이지네이션.gif"}
-          />
-          <ImgStyle
-            alt="코인네버다이 보유자산"
-            src={process.env.PUBLIC_URL + "cnd/cnd-보유자산.gif"}
-          />
-          <ImgStyle
-            alt="코인네버다이 소셜"
-            src={process.env.PUBLIC_URL + "cnd/cnd-로그인-소셜.gif"}
-          />
-          <ImgStyle
-            alt="코인네버다이 회원가입, 이메일"
-            src={process.env.PUBLIC_URL + "cnd/cnd-회원가입-이메일-사이즈.gif"}
-          />
-          <ImgStyle
-            alt="코인네버다이 회원가입, 이메일 반응형"
-            src={process.env.PUBLIC_URL + "cnd/cnd-로그인:회원가입-반응형.gif"}
-          />
-        </ImageContainer>
-      </div>
+        <Carousel images={coinImages} />
+      </InformationContainer>
       <Line />
       <LinkContainer>
         <h4>
@@ -158,10 +144,10 @@ const CoinsNeverDie = () => {
           <a href="https://coins-never-die-j4uc.vercel.app/">✨ 배포</a>
         </h4>
       </LinkContainer>
-      <기간과인원수>
+      <DurationAndPeople>
         <h4>2023.01 ~ 2023.02</h4>
         <h4>FE 3명</h4>
-      </기간과인원수>
+      </DurationAndPeople>
       <Line />
       <h3>Skills & Tools</h3>
       <h4>
@@ -170,10 +156,11 @@ const CoinsNeverDie = () => {
       </h4>
       <h4>🤝  Git, GitHub, Figma, Discord, Zep</h4>
       <Line />
-      <h3>목적</h3>
+      <h3>설명</h3>
       <ul>
         <li>
-          코인 입문자도 쉽게 사용할 수 있는 UI의 코인 모의투자 웹 사이트입니다.
+          코인 입문자도 쉽게 사용할 수 있는 UI의 코인 모의투자 웹
+          애플리케이션입니다.
         </li>
         <li>
           코인의 현재가, 변동률, 거래대금을 실시간으로 조회할 수 있습니다.
@@ -192,7 +179,7 @@ const CoinsNeverDie = () => {
       </ul>
       <Line />
       <h3>담당 업무</h3>
-      <h4>프론트엔드, Firebase, 팀원</h4>
+      <h4>프론트엔드, Firebase</h4>
       <ul>
         <li>이메일/소셜 로그인</li>
         <li>이메일/소셜 회원가입</li>

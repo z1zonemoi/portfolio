@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Carousel from "./Carousel";
 
 const CoinsNeverDieContainer = styled.div`
   display: flex;
@@ -69,16 +70,8 @@ const CoinsNeverDieContainer = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
-  width: 27rem;
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-`;
-
-const ImgStyle = styled.img`
-  width: 27rem;
-  border-radius: 0.2rem;
+const InformationContainer = styled.div`
+  margin-bottom: 1rem;
 `;
 
 const LinkContainer = styled.div`
@@ -108,29 +101,31 @@ const Line = styled.div`
   margin: 1rem;
 `;
 
-const 기간과인원수 = styled.div`
+const DurationAndPeople = styled.div`
   align-self: start;
   margin: 1rem 2rem 0.2rem 2rem;
 `;
 
 const Daeyeo4U = () => {
+  const daeyeoImages = [
+    { alt: "대여가대여 검색", src: "daeyeo/검색.gif" },
+    { alt: "대여가대여 결제", src: "daeyeo/결제.gif" },
+    { alt: "대여가대여 글등록", src: "daeyeo/글등록.gif" },
+    { alt: "대여가대여 마이페이지", src: "daeyeo/마이페이지.gif" },
+    { alt: "대여가대여 메인페이지", src: "daeyeo/메인페이지.gif" },
+    { alt: "대여가대여 상세페이지", src: "daeyeo/상세페이지.gif" },
+    { alt: "대여가대여 예약", src: "daeyeo/예약.gif" },
+    { alt: "대여가대여 카테고리", src: "daeyeo/카테고리.gif" },
+    { alt: "대여가대여 회원가입", src: "daeyeo/회원가입.gif" },
+  ];
+
   return (
     <CoinsNeverDieContainer>
-      <div>
+      <InformationContainer>
         <h2>대여가 대여</h2>
         <h3>공간대여 프로젝트</h3>
-        <ImageContainer>
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/검색.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/결제.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/글등록.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/마이페이지.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/메인페이지.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/상세페이지.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/예약.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/카테고리.gif"} />
-          <ImgStyle src={process.env.PUBLIC_URL + "daeyeo/회원가입.gif"} />
-        </ImageContainer>
-      </div>
+        <Carousel images={daeyeoImages} />
+      </InformationContainer>
       <Line />
       <LinkContainer>
         <h4>
@@ -144,10 +139,10 @@ const Daeyeo4U = () => {
           </a>
         </h4>
       </LinkContainer>
-      <기간과인원수>
+      <DurationAndPeople>
         <h4>2022.11 ~ 2022.12</h4>
         <h4>FE 3명 | BE 4명</h4>
-      </기간과인원수>
+      </DurationAndPeople>
       <Line />
       <h3>Skills & Tools</h3>
       <h4>
@@ -156,7 +151,7 @@ const Daeyeo4U = () => {
       </h4>
       <h4>🤝  Git, GitHub, Figma, Slack, Discord, Zep</h4>
       <Line />
-      <h3>목적</h3>
+      <h3>설명</h3>
       <ul>
         <li>사용자가 소유 공간을 카테고리별로 등록할 수 있습니다.</li>
         <li>
@@ -177,7 +172,7 @@ const Daeyeo4U = () => {
       </ul>
       <Line />
       <h3>담당 업무</h3>
-      <h4>프론트엔드, Firebase, 팀원</h4>
+      <h4>프론트엔드</h4>
       <ul>
         <li>전체게시글</li>
         <li>MBTI 추천 장소</li>
@@ -190,7 +185,6 @@ const Daeyeo4U = () => {
         <li>라우터 담당</li>
       </ul>
       <Line />
-
       <h3>주요 구현 내용</h3>
       <ul>
         <li>

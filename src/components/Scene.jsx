@@ -105,11 +105,7 @@ export default Example;
 const Contain = styled.div`
   width: 20rem;
   height: 20rem;
-  /* border-radius: 0.2rem; */
-  /* margin: 0 auto; */
-  /* padding: 1rem; */
   background: #fbfafc;
-  /* border: 1px solid red; */
   :hover {
     cursor: pointer;
   }
