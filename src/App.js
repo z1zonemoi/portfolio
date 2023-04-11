@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+
 import Main from "./pages/Main";
 
 const Container = styled.div`
@@ -10,15 +10,15 @@ const Container = styled.div`
 
 function App() {
   useEffect(() => {
-    window.onbeforeunload = function pushRefresh() {
+    const reFresh = () => {
       window.scrollTo(0, 0);
     };
+    window.onbeforeunload = reFresh;
   }, []);
+
   return (
     <Container>
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
+      <Main />
     </Container>
   );
 }

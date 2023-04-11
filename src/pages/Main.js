@@ -1,7 +1,9 @@
 import { useEffect } from "react";
-import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { useResetRecoilState } from "recoil";
+
 import { navIndexState } from "../atom";
+
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Nav from "../components/Nav";
@@ -10,19 +12,8 @@ import Skills from "../components/Skills";
 import Title from "../components/Title";
 import useMoveElement from "../useMoveElement";
 
-const MainContainer = styled.div`
-  background-color: #fbfafc;
-  #max-width {
-    max-width: 70rem;
-    margin: 0 auto;
-  }
-  > footer {
-    padding: 1rem;
-  }
-`;
-
 const Main = () => {
-  const [id, sId] = useRecoilState(navIndexState);
+  const setId = useResetRecoilState(navIndexState);
 
   const { element, moveToElement } = useMoveElement();
 
@@ -33,23 +24,22 @@ const Main = () => {
   };
 
   useEffect(() => {
-    const callback = (el, observer) => {
+    const callback = (el) => {
       el.forEach((el) => {
         if (el.intersectionRatio > 0.5) {
           const b = element.current.indexOf(el.target);
-          sId(() => b);
+          setId(() => b);
         }
       });
     };
 
     let observer = new IntersectionObserver(callback, option);
+
     observer.observe(element.current[0]);
     observer.observe(element.current[1]);
     observer.observe(element.current[2]);
     observer.observe(element.current[3]);
     observer.observe(element.current[4]);
-
-    // console.log(element.current);
   }, [element]);
 
   return (
@@ -68,3 +58,16 @@ const Main = () => {
 };
 
 export default Main;
+
+const MainContainer = styled.div`
+  background-color: #fbfafc;
+
+  #max-width {
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  footer {
+    margin: 1rem;
+  }
+`;

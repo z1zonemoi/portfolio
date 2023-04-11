@@ -1,9 +1,45 @@
 import React from "react";
 import styled from "styled-components";
+
 import useBodyOverflowScroll from "../useBodyOverflowScroll";
 import CoinsNeverDie from "./CoinsNeverDie";
 import Daeyeo4U from "./Daeyeo4U";
-import Portfolio from "./Portfolio";
+
+const Modal = ({ modal, setModal, content }) => {
+  const { unLockBodyScroll } = useBodyOverflowScroll();
+  if (!modal) return;
+
+  const onClickModal = () => {
+    setModal(!modal);
+    unLockBodyScroll();
+  };
+
+  const stopEventPropagation = (event) => {
+    event.stopPropagation();
+  };
+
+  const getProject = (content) => {
+    if (content === "coins") {
+      return <CoinsNeverDie />;
+    }
+    if (content === "share") {
+      return <Daeyeo4U />;
+    }
+  };
+
+  if (modal) {
+    return (
+      <ModalContainer onClick={onClickModal}>
+        <div onClick={stopEventPropagation}>
+          <button onClick={onClickModal}>X</button>
+          {getProject(content)}
+        </div>
+      </ModalContainer>
+    );
+  }
+};
+
+export default Modal;
 
 const ModalContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
@@ -13,6 +49,7 @@ const ModalContainer = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
+
   > div {
     padding: 1rem;
     z-index: 999;
@@ -38,41 +75,3 @@ const ModalContainer = styled.div`
     }
   }
 `;
-
-const Modal = ({ modal, setModal, content }) => {
-  const { unLockBodyScroll } = useBodyOverflowScroll();
-  if (!modal) return;
-
-  const onClickModal = () => {
-    setModal(!modal);
-    unLockBodyScroll();
-  };
-
-  const stopEventPropagation = (event) => {
-    event.stopPropagation();
-  };
-
-  const getProject = (content) => {
-    if (content === "portfolio") {
-      return <Portfolio />;
-    }
-    if (content === "coins") {
-      return <CoinsNeverDie />;
-    }
-    if (content === "share") {
-      return <Daeyeo4U />;
-    }
-  };
-  if (modal) {
-    return (
-      <ModalContainer onClick={onClickModal}>
-        <div onClick={stopEventPropagation}>
-          <button onClick={onClickModal}>X</button>
-          {getProject(content)}
-        </div>
-      </ModalContainer>
-    );
-  }
-};
-
-export default Modal;

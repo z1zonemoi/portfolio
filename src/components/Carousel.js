@@ -17,6 +17,7 @@ const Carousel = ({ images }) => {
     pauseOnFocus: true,
     pauseOnHover: true,
   };
+
   return (
     <StyledSlide {...settings}>
       {images.map((image) => {

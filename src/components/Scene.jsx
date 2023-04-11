@@ -1,12 +1,14 @@
-import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import React from "react";
 import { Suspense } from "react";
+import styled from "styled-components";
+
+import { useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import styled from "styled-components";
 
 export function Model() {
   const { nodes, materials } = useGLTF("/scene.gltf");
+
   return (
     <group
       position={[1.2, -0.3, 0.7]}
@@ -72,35 +74,33 @@ export function Model() {
 
 useGLTF.preload("/scene.gltf");
 
-const Example = () => {
+const Computer = () => {
   return (
-    <>
-      <Contain>
-        <Canvas>
-          <Suspense fallback={null}>
-            <directionalLight intensity={1} />
-            <ambientLight intensity={0.7} />
-            <spotLight
-              intensity={0.7}
-              angle={0.2}
-              penumbra={2}
-              position={[5, 2, 10]}
-              castShadow
-            />
-            <Model />
-            <OrbitControls
-              enablePan={true}
-              enableZoom={true}
-              enableRotate={true}
-            />
-          </Suspense>
-        </Canvas>
-      </Contain>
-    </>
+    <Contain>
+      <Canvas>
+        <Suspense fallback={null}>
+          <directionalLight intensity={1} />
+          <ambientLight intensity={0.7} />
+          <spotLight
+            intensity={0.7}
+            angle={0.2}
+            penumbra={2}
+            position={[5, 2, 10]}
+            castShadow
+          />
+          <Model />
+          <OrbitControls
+            enablePan={true}
+            enableZoom={true}
+            enableRotate={true}
+          />
+        </Suspense>
+      </Canvas>
+    </Contain>
   );
 };
 
-export default Example;
+export default Computer;
 
 const Contain = styled.div`
   width: 20rem;

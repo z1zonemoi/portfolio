@@ -1,19 +1,7 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
-import Sns from "./Sns";
 
-const ContactContainer = styled.div`
-  padding: 5rem;
-  height: fit-content;
-  > h2 {
-    font-size: xx-large;
-    font-weight: 600;
-  }
-  .snsContainer {
-    margin-top: 3rem;
-    margin-left: 1rem;
-  }
-`;
+import Sns from "./Sns";
 
 const Contact = forwardRef((props, ref) => {
   const mySNS = [
@@ -39,3 +27,16 @@ const Contact = forwardRef((props, ref) => {
 });
 
 export default Contact;
+
+const ContactContainer = styled.div`
+  padding: 5rem;
+  height: fit-content;
+  > h2 {
+    font-size: xx-large;
+    font-weight: 600;
+  }
+  .snsContainer {
+    margin-top: 3rem;
+    margin-left: 1rem;
+  }
+`;

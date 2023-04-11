@@ -1,15 +1,18 @@
 import { useRef } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
+
 import { navIndexState } from "./atom";
 
 const useMoveElement = () => {
-  const [id, sId] = useRecoilState(navIndexState);
+  const id = useRecoilValue(navIndexState);
 
   const navClassName = (className, index) => {
     let applyClassName = "navRight";
+
     if (className) {
       applyClassName = className;
     }
+
     if (!(id === index) || index === 0) {
       return applyClassName;
     } else {

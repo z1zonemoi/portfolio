@@ -1,6 +1,23 @@
 import { forwardRef } from "react";
 import styled from "styled-components";
-import Example from "./Scene";
+
+import Computer from "./Scene";
+
+const AboutMe = forwardRef((props, ref) => {
+  return (
+    <AboutMeContainer ref={(about) => (ref.current[2] = about)}>
+      <h2>About Me</h2>
+      <div className="informationContainer">
+        <Computer />
+        <div className="aboutMeSubTitle">
+          <h3>기록하여 회고하는 걸 즐기는 개발자</h3>
+          <h3>항상 실천하며, 성장의지가 강한 개발자</h3>
+          <h3>정보 공유를 좋아하는 개발자</h3>
+        </div>
+      </div>
+    </AboutMeContainer>
+  );
+});
 
 const AboutMeContainer = styled.div`
   padding: 5rem;
@@ -32,21 +49,5 @@ const AboutMeContainer = styled.div`
     }
   }
 `;
-
-const AboutMe = forwardRef((props, ref) => {
-  return (
-    <AboutMeContainer ref={(about) => (ref.current[2] = about)}>
-      <h2>About Me</h2>
-      <div className="informationContainer">
-        <Example />
-        <div className="aboutMeSubTitle">
-          <h3>기록하여 회고하는 걸 즐기는 개발자</h3>
-          <h3>항상 실천하며, 성장의지가 강한 개발자</h3>
-          <h3>정보 공유를 좋아하는 개발자</h3>
-        </div>
-      </div>
-    </AboutMeContainer>
-  );
-});
 
 export default AboutMe;
