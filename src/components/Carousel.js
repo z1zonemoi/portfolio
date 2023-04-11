@@ -23,9 +23,13 @@ const Carousel = ({ images }) => {
       {images.map((image) => {
         const { alt, src } = image;
         return (
-          <ImageContainer key={alt}>
-            <ImgStyle alt={alt} src={process.env.PUBLIC_URL + src} />
-          </ImageContainer>
+          <div className="imageContainer" key={alt}>
+            <img
+              className="imageStyle"
+              alt={alt}
+              src={process.env.PUBLIC_URL + src}
+            />
+          </div>
         );
       })}
     </StyledSlide>
@@ -33,15 +37,17 @@ const Carousel = ({ images }) => {
 };
 
 const StyledSlide = styled(Slider)`
-  width: 27rem;
-  height: 15rem;
+  width: 20rem;
+  height: 12rem;
+
   .slick-slider {
     z-index: -1;
   }
   ul {
-    width: 27rem;
+    width: 20rem;
     position: absolute;
-    bottom: -10%;
+    bottom: -20%;
+    margin-bottom: 1rem;
   }
   .slick-dots li button:before {
     font-family: "slick";
@@ -64,7 +70,7 @@ const StyledSlide = styled(Slider)`
     color: #655dbb;
   }
   .slick-list {
-    width: 27rem;
+    width: 20rem;
     height: 15rem;
     overflow: hidden;
   }
@@ -80,14 +86,37 @@ const StyledSlide = styled(Slider)`
     color: #655dbb;
     -moz-osx-font-smoothing: grayscale;
   }
-`;
 
-const ImageContainer = styled.div`
-  width: 27rem;
-`;
-const ImgStyle = styled.img`
-  width: 27rem;
-  border-radius: 0.2rem;
+  .imageContainer {
+    width: 20rem;
+  }
+  .imageStyle {
+    width: 20rem;
+    border-radius: 0.2rem;
+  }
+
+  @media (min-width: 650px) {
+    width: 27rem;
+    height: 15rem;
+
+    ul {
+      width: 27rem;
+      bottom: -10%;
+      margin-bottom: 0rem;
+    }
+
+    .slick-list {
+      width: 27rem;
+    }
+
+    .imageContainer {
+      width: 27rem;
+    }
+
+    .imageStyle {
+      width: 27rem;
+    }
+  }
 `;
 
 export default Carousel;

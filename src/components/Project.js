@@ -68,11 +68,25 @@ const ProjectContainer = styled.div`
   > div {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
+    align-items: center;
     margin-top: 3rem;
   }
 
+  @media (min-width: 620px) {
+    > div {
+      align-items: baseline;
+    }
+
+    .rightProject {
+      align-self: flex-end;
+    }
+  }
+
   @media (min-width: 800px) {
+    > div {
+      align-items: baseline;
+    }
+
     .rightProject {
       align-self: flex-end;
     }
@@ -80,11 +94,10 @@ const ProjectContainer = styled.div`
 `;
 
 const ProjectInformation = styled.div`
-  width: 30rem;
-  height: 20rem;
+  width: 17rem;
+  height: 12rem;
   margin: 5px;
   background-color: #ffffff;
-
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   padding: 1rem;
   border-radius: 0.7rem;
@@ -103,5 +116,15 @@ const ProjectInformation = styled.div`
     cursor: pointer;
     background: linear-gradient(#ecf2ff 79%, white);
     transition: 0.7s;
+  }
+
+  @media (min-width: 620px) {
+    width: 22rem;
+    height: 17rem;
+  }
+
+  @media (min-width: 800px) {
+    width: 30rem;
+    height: 20rem;
   }
 `;

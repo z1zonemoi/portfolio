@@ -2,15 +2,15 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import { useResetRecoilState } from "recoil";
 
-import { navIndexState } from "../atom";
+import { navIndexState } from "./atom";
 
-import AboutMe from "../components/AboutMe";
-import Contact from "../components/Contact";
-import Nav from "../components/Nav";
-import Project from "../components/Project";
-import Skills from "../components/Skills";
-import Title from "../components/Title";
-import useMoveElement from "../useMoveElement";
+import AboutMe from "./components/AboutMe";
+import Contact from "./components/Contact";
+import Nav from "./components/Nav";
+import Project from "./components/Project";
+import Skills from "./components/Skills";
+import Title from "./components/Title";
+import useMoveElement from "./useMoveElement";
 
 const Main = () => {
   const setId = useResetRecoilState(navIndexState);

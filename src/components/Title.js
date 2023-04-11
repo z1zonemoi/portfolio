@@ -40,7 +40,7 @@ const Title = forwardRef((props, ref) => {
     <MainContainer ref={(title) => (ref.current[0] = title)}>
       <h1 className="hi">{myName}</h1>
       <br />
-      <h1>{introduceName}</h1>
+      <h1 className="hi">{introduceName}</h1>
       <div>
         scroll
         <MdKeyboardDoubleArrowDown />
@@ -64,8 +64,20 @@ const MainContainer = styled.div`
   align-items: center;
 
   > h1 {
-    font-size: 2rem;
+    font-size: 1rem;
     color: black;
+  }
+
+  @media (min-width: 500px) {
+    .hi {
+      font-size: 1.7rem;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .hi {
+      font-size: 2rem;
+    }
   }
 
   > div {

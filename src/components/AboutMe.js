@@ -28,24 +28,36 @@ const AboutMeContainer = styled.div`
     font-weight: 600;
     margin-bottom: 2rem;
   }
+
   .informationContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-left: 1rem;
   }
-  .profileImage {
-    width: 15rem;
-    height: 15rem;
-    background-color: gray;
-  }
+
   .aboutMeSubTitle {
     height: 8rem;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin-left: 2.5rem;
     margin-top: 2.7rem;
     font-weight: 500;
     > h3 {
       margin-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .aboutMeSubTitle {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 860px) {
+    .informationContainer {
+      flex-direction: row;
+    }
+    .aboutMeSubTitle {
+      font-size: 1.2rem;
     }
   }
 `;

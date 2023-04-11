@@ -1,6 +1,11 @@
-import styled from "styled-components";
-
 import Carousel from "./Carousel";
+import {
+  ProjectContainer,
+  InformationContainer,
+  LinkContainer,
+  Line,
+  DurationAndPeople,
+} from "../projectStyle";
 
 const Daeyeo4U = () => {
   const daeyeoImages = [
@@ -16,7 +21,7 @@ const Daeyeo4U = () => {
   ];
 
   return (
-    <CoinsNeverDieContainer>
+    <ProjectContainer>
       <InformationContainer>
         <h2>대여가 대여</h2>
         <h3>공간대여 프로젝트</h3>
@@ -133,113 +138,8 @@ const Daeyeo4U = () => {
         <li>서버 배포 전 ngrok, 배포 후 ec2와의 API 통신</li>
         <li>github action을 통한 AWS S3 파이프라인 구축 CICD 경험</li>
       </ul>
-    </CoinsNeverDieContainer>
+    </ProjectContainer>
   );
 };
 
 export default Daeyeo4U;
-
-const CoinsNeverDieContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 3rem;
-  line-height: 1.7rem;
-  span {
-    color: #655dbb;
-    border-radius: 0.2rem;
-    font-weight: 700;
-    background-color: #f1f2f6;
-    padding: 0.2rem;
-    :hover {
-      background-color: #655dbb;
-      color: #f1f2f6;
-      transition: 0.7s;
-    }
-  }
-  > div {
-    > h2 {
-      text-align: center;
-      font-size: xx-large;
-      font-weight: 700;
-      padding-bottom: 1rem;
-    }
-    > h3 {
-      text-align: center;
-      color: gray;
-    }
-  }
-  > h3 {
-    align-self: start;
-    font-weight: 700;
-    font-size: 1.2rem;
-    margin: 0.2rem 2rem 0.2rem 2rem;
-    /* padding: 2rem 7rem 2rem 7rem; */
-    color: #655dbb;
-  }
-  > h4 {
-    align-self: start;
-    margin: 1rem 2rem 1rem 2rem;
-  }
-  > ul {
-    align-self: start;
-    padding: 1rem 2rem 2rem 3rem;
-    list-style: disc;
-    > li {
-      padding-bottom: 0.5rem;
-      &::marker {
-        color: #655dbb;
-      }
-      > ul {
-        color: #2f3542;
-        list-style: circle;
-        > li {
-          margin-left: 1rem;
-          &::marker {
-            color: #655dbb;
-          }
-          > ul {
-            margin-left: 1rem;
-          }
-        }
-      }
-    }
-  }
-`;
-
-const InformationContainer = styled.div`
-  margin-bottom: 1rem;
-`;
-
-const LinkContainer = styled.div`
-  margin-left: 2rem;
-  display: flex;
-  flex-direction: row;
-  align-self: start;
-  > h4 {
-    font-size: 1rem;
-    font-weight: 700;
-    > a {
-      text-decoration: none;
-      color: black;
-      margin-right: 1.2rem;
-      :hover {
-        cursor: pointer;
-        color: #655dbb;
-        transition: 0.5s;
-      }
-    }
-  }
-`;
-
-const Line = styled.div`
-  width: 97%;
-  border-bottom: 1px solid #ecf2ff;
-  margin: 1rem;
-`;
-
-const DurationAndPeople = styled.div`
-  align-self: start;
-  margin: 1rem 2rem 0.2rem 2rem;
-`;

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 
-import Main from "./pages/Main";
+import Main from "./Main";
 
 const Container = styled.div`
   display: flex;
